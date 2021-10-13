@@ -1,0 +1,120 @@
+.outerdiv {
+  background-color: #d3d3d35e;
+  height: 92vh;
+  overflow: hidden;
+}
+.topDiv {
+  height: 13vh;
+  padding: 2vh 2%;
+}
+.bottomDiv {
+  height: 75vh;
+  overflow-y: auto;
+  padding: 0%;
+  padding-bottom: 4vh;
+}
+.cardDetailsDiv {
+  margin-top: 3vh;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 1px;
+  height: 39vh;
+  background-color: white;
+  width: 22.5%;
+  margin-left: 2%;
+  margin-top: 4vh;
+  cursor: pointer;
+  overflow-y: auto;
+}
+.cardTopDiv {
+  height: 10vh;
+  padding: 0%;
+  margin: 1vh 2%;
+}
+.cardTopDivImageDiv {
+  width: 30%;
+  height: 10vh;
+  padding: 0%;
+  background: url(../../assets/boss.png);
+  background-size: 100% 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  float: left;
+}
+.cardTopDivNoImageDiv {
+  width: 30%;
+  height: 10vh;
+  line-height: 10vh;
+  text-align: center;
+  padding: 0%;
+  border: 0.5px solid;
+  border-radius: 50%;
+  float: left;
+  background-color: aliceblue;
+}
+.cardTopDivDetailsDiv {
+  height: 10vh;
+  width: 70%;
+  float: right;
+  padding-left: 10%;
+}
+.cardTopDivDetailsDivName {
+  height: 4vh;
+  line-height: 4vh;
+  font-size: 16px;
+  font-weight: 600;
+}
+.cardTopDivDetailsDivFName {
+  margin-top: 1vh;
+}
+.cardFallFalse {
+  margin-top: 2vh;
+  height: 8vh;
+  line-height: 4vh;
+  border-top: 0.5px solid gray;
+  border-bottom: 0.5px solid gray;
+  width: 96%;
+  margin-left: 2%;
+  text-align: center;
+}
+.cardFallTrue {
+  margin-top: 2vh;
+  height: 8vh;
+  line-height: 4vh;
+  background-color: coral;
+  border-top: 0.5px solid coral;
+  border-bottom: 0.5px solid coral;
+  color: white;
+  text-align: center;
+}
+.cardDetailsDiv {
+  margin-top: 3vh;
+}
+.filterSelect {
+  height: 6vh;
+  width: 15vw;
+  padding: 5px;
+  border-color: #00b3b3;
+  border-width: 1px 15px;
+
+  margin: 0 auto;
+}
+.filterSelect:focus {
+  outline: none;
+}
+.blink {
+  animation: blink 2s steps(5, start) infinite;
+  -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}

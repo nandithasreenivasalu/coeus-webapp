@@ -1,0 +1,71 @@
+
+<div class="h-screen font-sans login bg-cover">
+    <div class="container mx-auto h-full flex flex-1 justify-center
+        items-center">
+        <div class="w-full max-w-lg">
+            <div class="leading-loose">
+                <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl">
+                    <p class="text-gray-800 font-medium text-center text-lg
+                        font-bold">Login</p>
+                    <div class="">
+
+
+
+                        <label class="block text-sm text-gray-00"
+                            for="username">Username</label>
+                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200
+                            rounded" id="username" name="username" type="text"
+                            required="" placeholder="User Name"
+                            aria-label="username">
+                    </div>
+                    <div class="mt-2">
+                        <label class="block text-sm text-gray-600"
+                            for="password">Password</label>
+                        <input class="w-full px-5 py-1 text-gray-700 bg-gray-200
+                            rounded" id="password" name="password" type="text"
+                            required="" placeholder="*******"
+                            aria-label="password">
+                    </div>
+                    <div class="mt-4 items-center justify-between">
+                        <button class="px-4 py-1 text-white font-light
+                            tracking-wider bg-gray-900 rounded" type="submit"
+                            (click)="login()">Login</button>
+                    </div>
+                    <a class="inline-block right-0 align-baseline font-bold
+                        text-sm text-500 hover:text-blue-800"
+                        [routerLink]="['/register']">
+                        Not registered ?
+                    </a>
+
+                    <!--           <div class="col-md-6" (click)="[selectedUserType='doctor']"
+                        [ngClass]="(selectedUserType=='doctor')?'notSelectedUserCls
+                        selectedUserCls':'notSelectedUserCls'">
+                        <div style="height: 12vh;width:60%;margin-left:20%;">
+                            <div style="height:12vh;background-image:
+                                url('../../../../assets/doctor.png');background-size:
+                                100% 100%;"></div>
+                        </div>
+                        <div style="height: 5vh;line-height: 5vh;text-align:
+                            center;">Doctor</div>
+                    </div>
+
+                    <div class="col-md-6"
+                        (click)="[selectedUserType='careTaker']"
+                        [ngClass]="(selectedUserType=='careTaker')?'notSelectedUserCls
+                        selectedUserCls':'notSelectedUserCls'"
+                        style="margin-left:
+                        10%;margin-right: 20%;">
+                        <div style="height: 12vh;width:60%;margin-left:20%;">
+                            <div style="height:12vh;background-image:
+                                url('../../../../assets/boss.png');background-size:
+                                100% 100%;"></div>
+                        </div>
+                        <div style="height: 5vh;line-height: 5vh;text-align:
+                            center;">Care Taker</div>
+                    </div>
+                -->
+                </form>
+
+            </div>
+        </div>
+    </div>
