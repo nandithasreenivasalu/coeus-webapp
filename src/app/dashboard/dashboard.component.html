@@ -149,34 +149,32 @@
                         </div>
                     </div>
 
-                    <!-- <div class="flex flex-1 flex-col md:flex-row lg:flex-row
-                        mx-2">
-                        <div style="height: 3vh;">Sort By
-                            <mat-form-field appearance="outline">
-                                <mat-select placeholder="Sort By"
-                                    [ngModel]="selectedFilterOption"
-                                    (ngModelChange)="onChange($event)" name="sel2"
-                                    [disabled]="openUserCard">
-                                    <mat-option *ngFor="let data of filterOptions"
-                                        [value]="data.value">
-                                        {{data.actual}}  </mat-option>
-                                    </mat-select>
-                    
-                                </mat-form-field>
-                    
-                            </div>
-                        </div> -->
+                    <div class="flex flex-1 flex-col md:flex-row lg:flex-row
+                    mx-2">                    
+                    <div style="height: 5vh;">Sort By</div>
+                    <mat-form-field appearance="outline">
+                        <!-- <mat-label>Sort By</mat-label> -->
+                        <mat-select placeholder="Sort By" [ngModel]="selectedFilterOption"
+                            (ngModelChange)="onChange($event)" name="sel2" [disabled]="openUserCard">
+                            <mat-option *ngFor="let data of filterOptions" [value]="data.value">
+                                {{data.actual}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    </div>
+
+
 
                     <div class="col-sm-3" style="text-align: center;">
                         <div *ngFor="let data of
-                        cardData" (click)="openUserCardFxn(data)" >
+                        cardDataSorted" (click)="openUserCardFxn(data)">
 
                             <div style="width: 33%; float: left; text-align: center;margin-bottom: 2%; ">
                                 <!--Top user 1-->
                                 <div class="rounded rounded-t-lg overflow-hidden
                                 shadow
                                 max-w-xs my-3" style="background-color: whitesmoke;">
-                                    
+
 
                                     <div *ngIf="data.image=='y'" class="cardTopDivImageDiv">
                                     </div>
@@ -211,7 +209,7 @@
 
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row cardDetailsDiv">
                                         <div class="cardDetailsDivImage">
                                             <img src="../../../../assets/heat.png" style="height:5vh;margin-left:auto;
@@ -249,7 +247,7 @@
                                     center;height:4vh;line-height: 4vh;"></div>
                                         </div>
 
-                                    
+
                                     </div>
 
 

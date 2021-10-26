@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//import * as _ from 'underscore';
+import * as _ from 'underscore';
 //import { MatDialog } from '@angular/material/dialog';
 import { Inject, Injectable } from '@angular/core';
+import { MatSelectModule} from '@angular/material/select'
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -40,47 +43,47 @@ export class DashboardComponent implements OnInit {
 
   
   constructor() {
-//        this.cardDataSorted = this.cardData;
+       this.cardDataSorted = this.cardData;
   this.userName = "sree Ganesha" ;
     
   }
   
-//   onChange(selectedValue:any) {
-//     console.log("selectedValue ",selectedValue);
-//     this.selectedFilterOption = selectedValue;
-//     if(this.selectedFilterOption=='name')
-//       this.sortByName();
-//     else if(this.selectedFilterOption=='fallAlert')
-//       this.sortByFallAlert();
-//     else if(this.selectedFilterOption=='redFlags')
-//       this.sortByRedFlags();
-//     else if(this.selectedFilterOption=='updatedAt')
-//       this.sortByUpdatedAt();
-// }
+  onChange(selectedValue:any) {
+    console.log("selectedValue ",selectedValue);
+    this.selectedFilterOption = selectedValue;
+    if(this.selectedFilterOption=='name')
+      this.sortByName();
+    else if(this.selectedFilterOption=='fallAlert')
+      this.sortByFallAlert();
+    else if(this.selectedFilterOption=='redFlags')
+      this.sortByRedFlags();
+    else if(this.selectedFilterOption=='updatedAt')
+      this.sortByUpdatedAt();
+}
   
-// sortByFallAlert(){
-//   let falls=[];
-//   let notfalls=[];
-//   this.cardData.filter((data)=>{
-//     if(data.fall)
-//       falls.push(data)
-//     else
-//       notfalls.push(data);
-//   });
-//   this.cardDataSorted=falls.concat(notfalls);
-// }
-// sortByName(){
-//   this.cardDataSorted=this.cardData
-//   this.cardDataSorted = _.sortBy( this.cardData, 'f_name' );
-// }
-// sortByRedFlags(){
-//   this.cardDataSorted=this.cardData
-//   this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.redAlerts.length; } )
-// }
-// sortByUpdatedAt(){
-//   this.cardDataSorted=this.cardData
-//   this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.updatedAt; } )
-// }
+sortByFallAlert(){
+  let falls=[];
+  let notfalls=[];
+  this.cardData.filter((data)=>{
+    if(data.fall)
+      falls.push(data)
+    else
+      notfalls.push(data);
+  });
+  this.cardDataSorted=falls.concat(notfalls);
+}
+sortByName(){
+  this.cardDataSorted=this.cardData
+  this.cardDataSorted = _.sortBy( this.cardData, 'f_name' );
+}
+sortByRedFlags(){
+  this.cardDataSorted=this.cardData
+  this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.redAlerts.length; } )
+}
+sortByUpdatedAt(){
+  this.cardDataSorted=this.cardData
+  this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.updatedAt; } )
+}
   
   ngOnInit(): void {
  //   this.cardDataSorted = this.cardData;
