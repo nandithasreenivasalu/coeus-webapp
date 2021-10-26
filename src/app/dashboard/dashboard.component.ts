@@ -29,15 +29,58 @@ export class DashboardComponent implements OnInit {
   selectedUser=undefined;
   cardDataSorted = [];
   userName: string="";
+  
 
+  filterOptions=[
+    {actual: 'Name', value: 'name'},
+    {actual: 'Fall Alert', value: 'fallAlert'},
+    {actual: 'Red Flags', value: 'redFlags'},
+    {actual:'Updated At',value:'updatedAt'}];
+  selectedFilterOption = 'fallAlert';
+
+  
   constructor() {
 //        this.cardDataSorted = this.cardData;
   this.userName = "sree Ganesha" ;
     
   }
   
+//   onChange(selectedValue:any) {
+//     console.log("selectedValue ",selectedValue);
+//     this.selectedFilterOption = selectedValue;
+//     if(this.selectedFilterOption=='name')
+//       this.sortByName();
+//     else if(this.selectedFilterOption=='fallAlert')
+//       this.sortByFallAlert();
+//     else if(this.selectedFilterOption=='redFlags')
+//       this.sortByRedFlags();
+//     else if(this.selectedFilterOption=='updatedAt')
+//       this.sortByUpdatedAt();
+// }
   
-  
+// sortByFallAlert(){
+//   let falls=[];
+//   let notfalls=[];
+//   this.cardData.filter((data)=>{
+//     if(data.fall)
+//       falls.push(data)
+//     else
+//       notfalls.push(data);
+//   });
+//   this.cardDataSorted=falls.concat(notfalls);
+// }
+// sortByName(){
+//   this.cardDataSorted=this.cardData
+//   this.cardDataSorted = _.sortBy( this.cardData, 'f_name' );
+// }
+// sortByRedFlags(){
+//   this.cardDataSorted=this.cardData
+//   this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.redAlerts.length; } )
+// }
+// sortByUpdatedAt(){
+//   this.cardDataSorted=this.cardData
+//   this.cardDataSorted =_.sortBy( this.cardData, function( item ) { return -item.updatedAt; } )
+// }
   
   ngOnInit(): void {
  //   this.cardDataSorted = this.cardData;
@@ -91,4 +134,5 @@ openAlertDialog(data:any){
      }
    }
 }
+
 }

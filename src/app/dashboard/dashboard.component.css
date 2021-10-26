@@ -15,6 +15,13 @@
 }
 .cardDetailsDiv {
   margin-top: 3vh;
+  margin-left: 2vh;
+}
+.cardDetailsDivImage{
+  border-color: black;
+  float:left;
+  width: 25%;
+  /* flex-wrap: wrap; */
 }
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -89,9 +96,7 @@
   color: white;
   text-align: center;
 }
-.cardDetailsDiv {
-  margin-top: 3vh;
-}
+
 .filterSelect {
   height: 6vh;
   width: 15vw;
