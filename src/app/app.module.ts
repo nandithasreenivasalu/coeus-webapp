@@ -15,7 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './subModule/alert/alert/alert.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { AlertComponent } from './subModule/alert/alert/alert.component';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    BrowserAnimationsModule,
     // MatOptionModule
  //   MatDivider,
   ],

@@ -4,7 +4,10 @@ import * as _ from 'underscore';
 import { Inject, Injectable } from '@angular/core';
 import { MatSelectModule} from '@angular/material/select'
 
-
+interface Food {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +16,12 @@ import { MatSelectModule} from '@angular/material/select'
 })
 export class DashboardComponent implements OnInit {
 
+foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
+//selected = 'option0';
  selected='';
   date:Date=new Date();
   cardData = [{ id: 1, age: 70, sex: 'M', blink: true, f_name: 'Steven', l_name: 'Vasquerz', temp: '100', tempDegree: '\xB0F', bpm: 74, bpmDegree: 'bpm', oxygen: 98, step_count: 400, date_time: 20201210200115, fall: false, last_alert: '', image: 'y', updatedAt: new Date(this.date.getTime() + (20 * 60 * 1000)), redAlerts: ['Temp - 100 \xB0F', 'Travelled to Covid affected Zone'] },
@@ -86,7 +95,16 @@ sortByUpdatedAt(){
 }
   
   ngOnInit(): void {
- //   this.cardDataSorted = this.cardData;
+   const date1 = new Date();
+    const date2=new Date(date1.getTime() + (20 * 60 * 1000));
+
+    console.log("date1 ",date1)
+    console.log("date2 ",date2)
+    let arr=[];
+    console.log("before ",arr)
+    console.log("after ",_.sortBy(arr, function(o) { return o; }))
+    this.openUserCard=false;
+    this.sortByFallAlert();
   }
   sidebarToggle() {
     var sidebar = document.getElementById('sidebar');

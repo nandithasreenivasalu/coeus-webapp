@@ -6,14 +6,16 @@
         <header class="bg-nav">
             <div class="flex justify-between">
                 <div class="p-1 mx-3 inline-flex items-center">
-                    <i class="fas fa-bars pr-2 text-white" (click)="sidebarToggle()"></i>
+                    <i class="fas fa-bars pr-2 text-white"
+                        (click)="sidebarToggle()"></i>
                     <h1 class="text-white p-2">FPTherapies</h1>
                 </div>
                 <div class="p-1 flex flex-row items-center">
                     <img (click)="profileToggle()" class="inline-block h-8 w-8
                         rounded-full" src="../../assets/doctor.png" alt="">
                     <a href="#" (click)="profileToggle()" class="text-white p-2
-                        no-underline hidden md:block lg:block" formControlName="userName">{{userName}}</a>
+                        no-underline hidden md:block lg:block"
+                        formControlName="userName">{{userName}}</a>
                     <div id="ProfileDropDown" class="rounded hidden shadow-md
                         bg-white absolute pin-t mt-12 mr-1 pin-r">
                         <ul class="list-reset">
@@ -41,7 +43,8 @@
                 <ul class="list-reset flex flex-col">
                     <li class="w-full h-full py-3 px-2 border-b
                         border-light-border bg-white">
-                        <a [routerLink]="['']" class="font-sans font-hairline hover:font-normal
+                        <a [routerLink]="['']" class="font-sans font-hairline
+                            hover:font-normal
                             text-sm text-nav-item no-underline">
                             <i class="fas fa-tachometer-alt float-left mx-2"></i>
                             Dashboard
@@ -49,7 +52,8 @@
                         </a>
                     </li>
                     <li class="w-full h-full py-3 px-2">
-                        <a href="#" class="font-sans font-hairline hover:font-normal
+                        <a href="#" class="font-sans font-hairline
+                            hover:font-normal
                             text-sm text-nav-item no-underline">
                             <i class="far fa-file float-left mx-2"></i>
                             Pages
@@ -58,7 +62,8 @@
                         <ul class="list-reset -mx-2 bg-white-medium-dark">
                             <li class="border-t mt-2 border-light-border w-full
                                 h-full px-2 py-3">
-                                <a [routerLink]="['/login']" class="mx-4 font-sans font-hairline
+                                <a [routerLink]="['/login']" class="mx-4
+                                    font-sans font-hairline
                                     hover:font-normal text-sm text-nav-item
                                     no-underline">
                                     Login Page
@@ -68,7 +73,8 @@
                             </li>
                             <li class="border-t border-light-border w-full
                                 h-full px-2 py-3">
-                                <a [routerLink]="['/register']" class="mx-4 font-sans font-hairline
+                                <a [routerLink]="['/register']" class="mx-4
+                                    font-sans font-hairline
                                     hover:font-normal text-sm text-nav-item
                                     no-underline">
                                     Register Page
@@ -83,7 +89,8 @@
             </aside>
             <!--/Sidebar-->
             <!--Main-->
-            <main class=" flex-1 p-3 overflow-hidden" style="background-color: lightgray;">
+            <main class="flex-1 p-3 overflow-hidden" style="background-color:
+                lightgray;">
 
                 <div class="flex flex-col">
                     <!-- Stats Row Starts Here -->
@@ -150,101 +157,132 @@
                     </div>
 
                     <div class="flex flex-1 flex-col md:flex-row lg:flex-row
-                    mx-2">                    
-                    <div style="height: 5vh;">Sort By</div>
-                    <mat-form-field appearance="outline">
-                        <!-- <mat-label>Sort By</mat-label> -->
-                        <mat-select placeholder="Sort By" [ngModel]="selectedFilterOption"
-                            (ngModelChange)="onChange($event)" name="sel2" [disabled]="openUserCard">
-                            <mat-option *ngFor="let data of filterOptions" [value]="data.value">
-                                {{data.actual}}
-                            </mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                    </div>
+                        mx-2">
+                        <div style="height: 5vh;">Sort By</div>
+                        <mat-form-field appearance="outline">
+                            <!-- <mat-label>Sort By</mat-label> -->
+                            <mat-select placeholder="Sort By"
+                                [ngModel]="selectedFilterOption"
+                                (ngModelChange)="onChange($event)" name="sel2"
+                                [disabled]="openUserCard">
+                                <mat-option *ngFor="let data of filterOptions"
+                                    [value]="data.value">
+                                    {{data.actual}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
+
+                    </div>
 
 
                     <div class="col-sm-3" style="text-align: center;">
                         <div *ngFor="let data of
-                        cardDataSorted" (click)="openUserCardFxn(data)">
-
-                            <div style="width: 33%; float: left; text-align: center;margin-bottom: 2%; ">
+                            cardDataSorted" (click)="openUserCardFxn(data)">
+                            <div style="width: 33%; float: left; text-align:
+                                center;margin-bottom: 2%;">
                                 <!--Top user 1-->
                                 <div class="rounded rounded-t-lg overflow-hidden
-                                shadow
-                                max-w-xs my-3" style="background-color: whitesmoke;">
+                                    shadow
+                                    max-w-xs my-3" style="background-color:
+                                    whitesmoke;">
 
 
-                                    <div *ngIf="data.image=='y'" class="cardTopDivImageDiv">
+                                    <div *ngIf="data.image=='y'"
+                                        class="cardTopDivImageDiv">
                                     </div>
-                                    <div *ngIf="data.image=='n'" class="cardTopDivNoImageDiv">
-                                        <i class="fa fa-upload fa-lg" aria-hidden="true"></i>
+                                    <div *ngIf="data.image=='n'"
+                                        class="cardTopDivNoImageDiv">
+                                        <i class="fa fa-upload fa-lg"
+                                            aria-hidden="true"></i>
                                     </div>
                                     <div class="text-center px-3 pb-6 pt-2">
-                                        <div *ngIf="data.redAlerts.length>0" style="float: right;"
-                                            on-mouseover='openAlertDialog(data)'><i class="fa fa fa-exclamation-circle
-                                            fa-lg" style="color: red;" [ngClass]="(data.blink)?'blink':''"></i></div>
+                                        <div *ngIf="data.redAlerts.length>0"
+                                            style="float: right;"
+                                            on-mouseover='openAlertDialog(data)'><i
+                                                class="fa fa
+                                                fa-exclamation-circle
+                                                fa-lg" style="color: red;"
+                                                [ngClass]="(data.blink)?'blink':''"></i></div>
                                         <h3 class="text-black text-sm bold
-                                        font-sans"> {{data.f_name}}
+                                            font-sans"> {{data.f_name}}
                                             {{data.l_name}}
                                         </h3>
                                         <p class="mt-2 font-sans font-light
-                                        text-grey-700">{{data.sex}} {{data.age}}</p>
+                                            text-grey-700">{{data.sex}}
+                                            {{data.age}}</p>
                                     </div>
 
-                                    <div class="row" [ngClass]="(data.fall)?'cardFallTrue':'cardFallFalse'">
+                                    <div class="row"
+                                        [ngClass]="(data.fall)?'cardFallTrue':'cardFallFalse'">
                                         <div *ngIf="data.fall">
                                             <div>FALL ALERT</div>
-                                            <div style="font-size: 12px;">Updated At
+                                            <div style="font-size: 12px;">Updated
+                                                At
                                                 - {{data.updatedAt | date:
                                                 'dd/MM/yyyy hh:mm:ss'}} </div>
                                         </div>
 
                                         <div *ngIf="!data.fall">
                                             <div>Last Alert : </div>
-                                            <div style="font-size: 12px;">Updated At
+                                            <div style="font-size: 12px;">Updated
+                                                At
                                                 - {{data.updatedAt | date:
                                                 'dd/MM/yyyy hh:mm:ss'}}</div>
-
                                         </div>
                                     </div>
 
                                     <div class="row cardDetailsDiv">
                                         <div class="cardDetailsDivImage">
-                                            <img src="../../../../assets/heat.png" style="height:5vh;margin-left:auto;
-                                            margin-right:auto;">
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.temp}}</div>
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.tempDegree}}</div>
+                                            <img
+                                                src="../../../../assets/heat.png"
+                                                style="height:5vh;margin-left:auto;
+                                                margin-right:auto;">
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.temp}}</div>
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.tempDegree}}</div>
                                         </div>
 
                                         <div class="cardDetailsDivImage">
-                                            <img src="../../../../assets/heart.png" style="height:5vh;margin-left:auto;
-                                            margin-right:auto;">
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.bpm}}</div>
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.bpmDegree}}</div>
+                                            <img
+                                                src="../../../../assets/heart.png"
+                                                style="height:5vh;margin-left:auto;
+                                                margin-right:auto;">
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.bpm}}</div>
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.bpmDegree}}</div>
                                         </div>
 
                                         <div class="cardDetailsDivImage">
-                                            <img src="../../../../assets/footsteps.png" style="height:5vh;margin-left:auto;
-                                            margin-right:auto;">
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.step_count}}</div>
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;"></div>
+                                            <img
+                                                src="../../../../assets/footsteps.png"
+                                                style="height:5vh;margin-left:auto;
+                                                margin-right:auto;">
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.step_count}}</div>
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;"></div>
                                         </div>
 
                                         <div class="cardDetailsDivImage">
-                                            <img src="../../../../assets/oxygen-symbol.png" style="height:5vh;margin-left:auto;
-                                            margin-right:auto;">
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;">{{data.oxygen}}</div>
-                                            <div style=" text-align:
-                                    center;height:4vh;line-height: 4vh;"></div>
+                                            <img
+                                                src="../../../../assets/oxygen-symbol.png"
+                                                style="height:5vh;margin-left:auto;
+                                                margin-right:auto;">
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;">{{data.oxygen}}</div>
+                                            <div style="text-align:
+                                                center;height:4vh;line-height:
+                                                4vh;"></div>
                                         </div>
 
 
@@ -265,10 +303,25 @@
             </main>
             <!--/Main-->
         </div>
+
+        <div>
+            <h4>Basic mat-select</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Favorite food</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                        {{food.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+        </div>
         <!--Footer-->
         <footer class="bg-grey-darkest text-white p-2">
             <div class="flex flex-1 mx-auto">&copy; 2021</div>
-            <div class="flex flex-1 mx-auto">Managed by: <a href="https://www.fptherapies.com/.com/"
+            <div class="flex flex-1 mx-auto">Managed by: <a
+                    href="https://www.fptherapies.com/.com/"
                     target="_blank">FPT</a></div>
         </footer>
         <!--/footer-->
